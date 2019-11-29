@@ -13,7 +13,7 @@ class Level3 extends Level {
       [3800, 458],
       [4000, 358],
     ]
-    this.bgs = ["bg1", , "bg6"];
+    this.bgs = ["bg1", "bg5", "bg6"];
     this.weather = "morning";
   }
 }

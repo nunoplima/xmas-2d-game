@@ -27,6 +27,7 @@ class Level extends Phaser.Scene {
     this.load.image("bg2", "assets/trees.png");
     this.load.image("bg3", "assets/snow.png");
     this.load.image("bg4", "assets/castle.png");
+    this.load.image("bg5", "assets/castle1.png");
     this.load.image("bg6", "assets/sanddunes.png");
   }
 
@@ -237,7 +238,7 @@ class Level extends Phaser.Scene {
 
   createParallaxBackgrounds(bg1, bg2, bg3) {
     state.bg1 = this.add.image(0, 30, bg1);
-    state.bg2 = this.add.image(0, 130, bg2);
+    state.bg2 = this.levelKey === "Level3" ? this.add.image(0, 80, bg2) : this.add.image(0, 130, bg2);
     state.bg3 = this.add.image(0, 130, bg3);
 
     state.bg1.setOrigin(0, 0);
