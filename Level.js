@@ -19,8 +19,9 @@ class Level extends Phaser.Scene {
     this.load.image("platform", "assets/platform.png");
     this.load.image("snowflake", "assets/snowflake.png");
     this.load.spritesheet("snowman", "assets/snowman.png", { frameWidth: 50, frameHeight: 70 });
-    this.load.image("bullet", "https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Bug+Invaders/bugPellet.png");
-    this.load.spritesheet("hero", "assets/santaspritesheet.png", { frameWidth: 80, frameHeight: 99 });
+    // this.load.image("bullet", "https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Bug+Invaders/bugPellet.png");
+    this.load.image("bullet", "assets/bullet.png");
+    this.load.spritesheet("hero", "assets/santaspritesheet1.png", { frameWidth: 80, frameHeight: 99 });
     this.load.spritesheet("boss", "assets/bossspritesheet1.png", { frameWidth: 75, frameHeight: 78 });
     this.load.image("bg1", "assets/mountain.png");
     this.load.image("bg2", "assets/trees.png");
@@ -379,11 +380,11 @@ class Level extends Phaser.Scene {
       }
 
       if (state.cursors.down.isDown && state.player.flipX && state.cursors.down.getDuration() < 20) {
-          state.bullets.create(state.player.x, state.player.y + 10, "bullet").setGravityY(-800).setVelocityX(-400);
+          state.bullets.create(state.player.x, state.player.y + 12, "bullet").setGravityY(-800).setVelocityX(-400).setScale(.028);;
       }
 
       if (state.cursors.down.isDown && !state.player.flipX && state.cursors.down.getDuration() < 20) {
-        state.bullets.create(state.player.x, state.player.y + 10, "bullet").setGravityY(-800).setVelocityX(400);
+        state.bullets.create(state.player.x, state.player.y + 12, "bullet").setGravityY(-800).setVelocityX(400).setScale(.028);;
       } 
     }
   }
